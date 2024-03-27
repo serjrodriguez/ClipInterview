@@ -19,7 +19,6 @@
 		7062DCC22BB4B8CF00FA4AE5 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7062DCC12BB4B8CF00FA4AE5 /* BaseViewController.swift */; };
 		7062DCC42BB4C3F700FA4AE5 /* ListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7062DCC32BB4C3F700FA4AE5 /* ListViewModelTests.swift */; };
 		7062DCC62BB4C44700FA4AE5 /* ListViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7062DCC52BB4C44700FA4AE5 /* ListViewControllerTests.swift */; };
-		7062DCC82BB4C97A00FA4AE5 /* ServiceManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7062DCC72BB4C97A00FA4AE5 /* ServiceManagerTests.swift */; };
 		7062DCCA2BB4D03300FA4AE5 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7062DCC92BB4D03300FA4AE5 /* Helpers.swift */; };
 /* End PBXBuildFile section */
 
@@ -57,7 +56,6 @@
 		7062DCC12BB4B8CF00FA4AE5 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		7062DCC32BB4C3F700FA4AE5 /* ListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModelTests.swift; sourceTree = "<group>"; };
 		7062DCC52BB4C44700FA4AE5 /* ListViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewControllerTests.swift; sourceTree = "<group>"; };
-		7062DCC72BB4C97A00FA4AE5 /* ServiceManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceManagerTests.swift; sourceTree = "<group>"; };
 		7062DCC92BB4D03300FA4AE5 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -112,10 +110,10 @@
 				7062DCC02BB4B8C000FA4AE5 /* Helpers */,
 				7062DCBF2BB4B80300FA4AE5 /* ListView */,
 				7062DC892BB48C8500FA4AE5 /* AppDelegate.swift */,
+				7062DCBB2BB48E8500FA4AE5 /* ServiceManager.swift */,
 				7062DC922BB48C8600FA4AE5 /* Assets.xcassets */,
 				7062DC942BB48C8600FA4AE5 /* LaunchScreen.storyboard */,
 				7062DC972BB48C8600FA4AE5 /* Info.plist */,
-				7062DCBB2BB48E8500FA4AE5 /* ServiceManager.swift */,
 			);
 			path = ClipInterview;
 			sourceTree = "<group>";
@@ -125,7 +123,6 @@
 			children = (
 				7062DCC52BB4C44700FA4AE5 /* ListViewControllerTests.swift */,
 				7062DCC32BB4C3F700FA4AE5 /* ListViewModelTests.swift */,
-				7062DCC72BB4C97A00FA4AE5 /* ServiceManagerTests.swift */,
 				7062DCC92BB4D03300FA4AE5 /* Helpers.swift */,
 			);
 			path = ClipInterviewTests;
@@ -302,7 +299,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7062DCC82BB4C97A00FA4AE5 /* ServiceManagerTests.swift in Sources */,
 				7062DCC62BB4C44700FA4AE5 /* ListViewControllerTests.swift in Sources */,
 				7062DCC42BB4C3F700FA4AE5 /* ListViewModelTests.swift in Sources */,
 				7062DCCA2BB4D03300FA4AE5 /* Helpers.swift in Sources */,

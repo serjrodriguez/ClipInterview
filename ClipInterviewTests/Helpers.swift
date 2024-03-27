@@ -8,6 +8,12 @@
 @testable import ClipInterview
 import Foundation
 
-func makeMockData() -> Model {
-    return Model(data: Children(children: [ChildrenData(data: ChildrenDetail(title: "Test Title"))]))
+func makeMockData(_ numberOfChildMembers: Int = 1) -> Model {
+    var childrenDataArray: [ChildrenData] = []
+    
+    for index in 1...numberOfChildMembers {
+        childrenDataArray.append(ChildrenData(data: ChildrenDetail(title: "Test title \(index)")))
+    }
+    
+    return Model(data: Children(children: childrenDataArray))
 }
