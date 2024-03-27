@@ -14,8 +14,14 @@ final class ServiceManagerTests: XCTestCase {
 
 final class MockServiceManager: ServiceManagerProtocol {
     var requestDataFromUrlCalledTimes = 0
+    var shouldReturnSuccessResponse = true
     
-    func requestDataFromURL<T>(_ urlString: String, completionHandler: @escaping (Result<T, any Error>) -> Void) where T : Decodable {
+    func requestDataFromURL<T>(_ urlString: String, completionHandler: @escaping (Result<T, Error>) -> Void) where T : Decodable {
         requestDataFromUrlCalledTimes += 1
+        if shouldReturnSuccessResponse {
+        } else {
+            let testError = NSError(domain: "Test Domain", code: 999)
+            completionHandler(.failure(testError))
+        }
     }
 }

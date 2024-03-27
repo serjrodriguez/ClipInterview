@@ -44,9 +44,13 @@ final class ListViewControllerTests: XCTestCase {
     func test_callingListViewControllerViewDidLoad_shouldBindViewModel() {
         XCTAssertNil(mockViewModel.manageError)
         XCTAssertNil(mockViewModel.reloadView)
+        XCTAssertEqual(mockViewModel.reloadViewArgsAccumulator.count, 0)
+        XCTAssertEqual(mockViewModel.managerErrorArgsAccumulator.count, 0)
         sut.viewDidLoad()
         XCTAssertNotNil(mockViewModel.manageError)
         XCTAssertNotNil(mockViewModel.reloadView)
+        XCTAssertEqual(mockViewModel.reloadViewArgsAccumulator.count, 2)
+        XCTAssertEqual(mockViewModel.managerErrorArgsAccumulator.count, 2)
     }
     
     func test_listViewController_shouldHaveTitle() {

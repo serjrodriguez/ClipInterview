@@ -20,6 +20,7 @@
 		7062DCC42BB4C3F700FA4AE5 /* ListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7062DCC32BB4C3F700FA4AE5 /* ListViewModelTests.swift */; };
 		7062DCC62BB4C44700FA4AE5 /* ListViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7062DCC52BB4C44700FA4AE5 /* ListViewControllerTests.swift */; };
 		7062DCC82BB4C97A00FA4AE5 /* ServiceManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7062DCC72BB4C97A00FA4AE5 /* ServiceManagerTests.swift */; };
+		7062DCCA2BB4D03300FA4AE5 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7062DCC92BB4D03300FA4AE5 /* Helpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		7062DCC32BB4C3F700FA4AE5 /* ListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModelTests.swift; sourceTree = "<group>"; };
 		7062DCC52BB4C44700FA4AE5 /* ListViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewControllerTests.swift; sourceTree = "<group>"; };
 		7062DCC72BB4C97A00FA4AE5 /* ServiceManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceManagerTests.swift; sourceTree = "<group>"; };
+		7062DCC92BB4D03300FA4AE5 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,7 @@
 				7062DCC52BB4C44700FA4AE5 /* ListViewControllerTests.swift */,
 				7062DCC32BB4C3F700FA4AE5 /* ListViewModelTests.swift */,
 				7062DCC72BB4C97A00FA4AE5 /* ServiceManagerTests.swift */,
+				7062DCC92BB4D03300FA4AE5 /* Helpers.swift */,
 			);
 			path = ClipInterviewTests;
 			sourceTree = "<group>";
@@ -302,6 +305,7 @@
 				7062DCC82BB4C97A00FA4AE5 /* ServiceManagerTests.swift in Sources */,
 				7062DCC62BB4C44700FA4AE5 /* ListViewControllerTests.swift in Sources */,
 				7062DCC42BB4C3F700FA4AE5 /* ListViewModelTests.swift in Sources */,
+				7062DCCA2BB4D03300FA4AE5 /* Helpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
