@@ -20,6 +20,7 @@
 		7062DCC42BB4C3F700FA4AE5 /* ListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7062DCC32BB4C3F700FA4AE5 /* ListViewModelTests.swift */; };
 		7062DCC62BB4C44700FA4AE5 /* ListViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7062DCC52BB4C44700FA4AE5 /* ListViewControllerTests.swift */; };
 		7062DCCA2BB4D03300FA4AE5 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7062DCC92BB4D03300FA4AE5 /* Helpers.swift */; };
+		7062DCCC2BB4DFE800FA4AE5 /* EjerciciosPracticos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7062DCCB2BB4DFE800FA4AE5 /* EjerciciosPracticos.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		7062DCC32BB4C3F700FA4AE5 /* ListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModelTests.swift; sourceTree = "<group>"; };
 		7062DCC52BB4C44700FA4AE5 /* ListViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewControllerTests.swift; sourceTree = "<group>"; };
 		7062DCC92BB4D03300FA4AE5 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		7062DCCB2BB4DFE800FA4AE5 /* EjerciciosPracticos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EjerciciosPracticos.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 				7062DC922BB48C8600FA4AE5 /* Assets.xcassets */,
 				7062DC942BB48C8600FA4AE5 /* LaunchScreen.storyboard */,
 				7062DC972BB48C8600FA4AE5 /* Info.plist */,
+				7062DCCB2BB4DFE800FA4AE5 /* EjerciciosPracticos.swift */,
 			);
 			path = ClipInterview;
 			sourceTree = "<group>";
@@ -292,6 +295,7 @@
 				7062DCBA2BB48E5500FA4AE5 /* ListViewModel.swift in Sources */,
 				7062DCBC2BB48E8500FA4AE5 /* ServiceManager.swift in Sources */,
 				7062DCC22BB4B8CF00FA4AE5 /* BaseViewController.swift in Sources */,
+				7062DCCC2BB4DFE800FA4AE5 /* EjerciciosPracticos.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
