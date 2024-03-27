@@ -13,6 +13,7 @@ enum URLStrings: String {
 
 protocol ListViewModelProtocol {
     var reloadView: (() -> Void)? { get set }
+    var manageError: ((Error) -> Void)? { get set }
     func requestListData()
     func getNumberOfRows() -> Int
     func getDataAtRow(_ row: Int) -> ChildrenData?
@@ -21,6 +22,7 @@ protocol ListViewModelProtocol {
 class ListViewModel: ListViewModelProtocol {
     var serviceManager: ServiceManagerProtocol
     var reloadView: (() -> Void)?
+    var manageError: ((Error) -> Void)?
     var model: Model?
     
     init(serviceManager: ServiceManagerProtocol) {
@@ -28,14 +30,14 @@ class ListViewModel: ListViewModelProtocol {
     }
     
     func requestListData() {
-        serviceManager.requestDataFromURL(URLStrings.dataListString.rawValue) { (result: Result<Model, Error>) in
+        serviceManager.requestDataFromURL(URLStrings.dataListString.rawValue) { [weak self] (result: Result<Model, Error>) in
+            guard let self = self else { return }
             switch result {
             case .success(let response):
-                print("Response from service \(response)")
                 self.model = response
                 self.reloadView?()
             case .failure(let error):
-                print("Error \(error)")
+                self.manageError?(error)
             }
         }
     }
