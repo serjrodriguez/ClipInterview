@@ -17,6 +17,7 @@
 		7062DCBA2BB48E5500FA4AE5 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7062DCB92BB48E5500FA4AE5 /* ListViewModel.swift */; };
 		7062DCBC2BB48E8500FA4AE5 /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7062DCBB2BB48E8500FA4AE5 /* ServiceManager.swift */; };
 		7062DCBE2BB4926300FA4AE5 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7062DCBD2BB4926300FA4AE5 /* Model.swift */; };
+		7062DCC22BB4B8CF00FA4AE5 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7062DCC12BB4B8CF00FA4AE5 /* BaseViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		7062DCB92BB48E5500FA4AE5 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
 		7062DCBB2BB48E8500FA4AE5 /* ServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceManager.swift; sourceTree = "<group>"; };
 		7062DCBD2BB4926300FA4AE5 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		7062DCC12BB4B8CF00FA4AE5 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 		7062DC882BB48C8500FA4AE5 /* ClipInterview */ = {
 			isa = PBXGroup;
 			children = (
+				7062DCC02BB4B8C000FA4AE5 /* Helpers */,
 				7062DCBF2BB4B80300FA4AE5 /* ListView */,
 				7062DC892BB48C8500FA4AE5 /* AppDelegate.swift */,
 				7062DC922BB48C8600FA4AE5 /* Assets.xcassets */,
@@ -136,6 +139,14 @@
 				7062DCB92BB48E5500FA4AE5 /* ListViewModel.swift */,
 			);
 			path = ListView;
+			sourceTree = "<group>";
+		};
+		7062DCC02BB4B8C000FA4AE5 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				7062DCC12BB4B8CF00FA4AE5 /* BaseViewController.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -273,6 +284,7 @@
 				7062DC8A2BB48C8500FA4AE5 /* AppDelegate.swift in Sources */,
 				7062DCBA2BB48E5500FA4AE5 /* ListViewModel.swift in Sources */,
 				7062DCBC2BB48E8500FA4AE5 /* ServiceManager.swift in Sources */,
+				7062DCC22BB4B8CF00FA4AE5 /* BaseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
