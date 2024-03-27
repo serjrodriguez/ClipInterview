@@ -33,10 +33,7 @@ class ListViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         view.backgroundColor = .white
-        tableView.delegate = self
-        tableView.dataSource = self
-        self.view.addSubview(tableView)
-        configureTableViewConstrainsts()
+        configureTableView()
         self.bindViewModel()
         viewModel.requestListData()
     }
@@ -53,7 +50,10 @@ class ListViewController: UIViewController {
         tableView.reloadData()
     }
     
-    private func configureTableViewConstrainsts() {
+    private func configureTableView() {
+        tableView.delegate = self
+        tableView.dataSource = self
+        self.view.addSubview(tableView)
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: view.topAnchor),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
