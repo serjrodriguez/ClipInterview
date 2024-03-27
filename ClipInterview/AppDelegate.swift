@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow()
         let serviceManager = ServiceManager()
         let viewModel = ListViewModel(serviceManager: serviceManager)
-        let viewController = ViewController(viewModel: viewModel)
+        let viewController = ListViewController(viewModel: viewModel)
         let navigationController = UINavigationController(rootViewController: viewController)
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()

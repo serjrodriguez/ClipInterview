@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ListViewController: UIViewController {
     
     var viewModel: ListViewModelProtocol
     
@@ -21,7 +21,7 @@ class ViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    var tableView: UITableView! = {
+    lazy var tableView: UITableView! = {
         var tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.backgroundColor = .white
@@ -36,15 +36,21 @@ class ViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         self.view.addSubview(tableView)
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
+        configureTableViewConstrainsts()
+        self.bindViewModel()
+        viewModel.requestListData()
     }
     
     private func bindViewModel() {
-        
+        viewModel.reloadView = { [weak self] in
+            DispatchQueue.main.async {
+                self?.tableView.reloadData()
+            }
+        }
+    }
+    
+    private func reloadView() {
+        tableView.reloadData()
     }
     
     private func configureTableViewConstrainsts() {
@@ -57,12 +63,15 @@ class ViewController: UIViewController {
     }
 }
 
-extension ViewController: UITableViewDelegate, UITableViewDataSource {
+extension ListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return viewModel.getNumberOfRows()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        guard let model = viewModel.getDataAtRow(indexPath.row) else { return UITableViewCell() }
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        cell.textLabel?.text = model.data.title
+        return cell
     }
 }
