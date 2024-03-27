@@ -19,14 +19,12 @@ class ListViewController: BaseViewController {
     lazy var tableView: UITableView! = {
         var tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.backgroundColor = .white
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         return tableView
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         view.backgroundColor = .white
         title = "List View"
         configureTableView()
@@ -54,7 +52,10 @@ class ListViewController: BaseViewController {
     }
     
     private func showErrorAlert(_ titleString: String) {
-        presentAlertWithTitle(titleString, firstActionTitle: "OK", secondActionTitle: "Retry", secondActionStyle: .default) { [weak self] _ in
+        presentAlertWithTitle(titleString, 
+                              firstActionTitle: "OK",
+                              secondActionTitle: "Retry",
+                              secondActionStyle: .default) { [weak self] _ in
             self?.requestData()
         }
     }

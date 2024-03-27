@@ -11,13 +11,15 @@
 		7062DC8E2BB48C8500FA4AE5 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7062DC8D2BB48C8500FA4AE5 /* ListViewController.swift */; };
 		7062DC932BB48C8600FA4AE5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7062DC922BB48C8600FA4AE5 /* Assets.xcassets */; };
 		7062DC962BB48C8600FA4AE5 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 7062DC952BB48C8600FA4AE5 /* Base */; };
-		7062DCA12BB48C8600FA4AE5 /* ClipInterviewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7062DCA02BB48C8600FA4AE5 /* ClipInterviewTests.swift */; };
 		7062DCAB2BB48C8600FA4AE5 /* ClipInterviewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7062DCAA2BB48C8600FA4AE5 /* ClipInterviewUITests.swift */; };
 		7062DCAD2BB48C8600FA4AE5 /* ClipInterviewUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7062DCAC2BB48C8600FA4AE5 /* ClipInterviewUITestsLaunchTests.swift */; };
 		7062DCBA2BB48E5500FA4AE5 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7062DCB92BB48E5500FA4AE5 /* ListViewModel.swift */; };
 		7062DCBC2BB48E8500FA4AE5 /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7062DCBB2BB48E8500FA4AE5 /* ServiceManager.swift */; };
 		7062DCBE2BB4926300FA4AE5 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7062DCBD2BB4926300FA4AE5 /* Model.swift */; };
 		7062DCC22BB4B8CF00FA4AE5 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7062DCC12BB4B8CF00FA4AE5 /* BaseViewController.swift */; };
+		7062DCC42BB4C3F700FA4AE5 /* ListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7062DCC32BB4C3F700FA4AE5 /* ListViewModelTests.swift */; };
+		7062DCC62BB4C44700FA4AE5 /* ListViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7062DCC52BB4C44700FA4AE5 /* ListViewControllerTests.swift */; };
+		7062DCC82BB4C97A00FA4AE5 /* ServiceManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7062DCC72BB4C97A00FA4AE5 /* ServiceManagerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,7 +47,6 @@
 		7062DC952BB48C8600FA4AE5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7062DC972BB48C8600FA4AE5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7062DC9C2BB48C8600FA4AE5 /* ClipInterviewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ClipInterviewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		7062DCA02BB48C8600FA4AE5 /* ClipInterviewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipInterviewTests.swift; sourceTree = "<group>"; };
 		7062DCA62BB48C8600FA4AE5 /* ClipInterviewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ClipInterviewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7062DCAA2BB48C8600FA4AE5 /* ClipInterviewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipInterviewUITests.swift; sourceTree = "<group>"; };
 		7062DCAC2BB48C8600FA4AE5 /* ClipInterviewUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipInterviewUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -53,6 +54,9 @@
 		7062DCBB2BB48E8500FA4AE5 /* ServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceManager.swift; sourceTree = "<group>"; };
 		7062DCBD2BB4926300FA4AE5 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		7062DCC12BB4B8CF00FA4AE5 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		7062DCC32BB4C3F700FA4AE5 /* ListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModelTests.swift; sourceTree = "<group>"; };
+		7062DCC52BB4C44700FA4AE5 /* ListViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewControllerTests.swift; sourceTree = "<group>"; };
+		7062DCC72BB4C97A00FA4AE5 /* ServiceManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceManagerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,7 +121,9 @@
 		7062DC9F2BB48C8600FA4AE5 /* ClipInterviewTests */ = {
 			isa = PBXGroup;
 			children = (
-				7062DCA02BB48C8600FA4AE5 /* ClipInterviewTests.swift */,
+				7062DCC52BB4C44700FA4AE5 /* ListViewControllerTests.swift */,
+				7062DCC32BB4C3F700FA4AE5 /* ListViewModelTests.swift */,
+				7062DCC72BB4C97A00FA4AE5 /* ServiceManagerTests.swift */,
 			);
 			path = ClipInterviewTests;
 			sourceTree = "<group>";
@@ -220,6 +226,7 @@
 					};
 					7062DC9B2BB48C8600FA4AE5 = {
 						CreatedOnToolsVersion = 15.3;
+						LastSwiftMigration = 1530;
 						TestTargetID = 7062DC852BB48C8500FA4AE5;
 					};
 					7062DCA52BB48C8600FA4AE5 = {
@@ -292,7 +299,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7062DCA12BB48C8600FA4AE5 /* ClipInterviewTests.swift in Sources */,
+				7062DCC82BB4C97A00FA4AE5 /* ServiceManagerTests.swift in Sources */,
+				7062DCC62BB4C44700FA4AE5 /* ListViewControllerTests.swift in Sources */,
+				7062DCC42BB4C3F700FA4AE5 /* ListViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -510,6 +519,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 769NAE85RJ;
@@ -519,6 +529,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.sergiorodriguez.ClipInterviewTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ClipInterview.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ClipInterview";
@@ -530,6 +541,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 769NAE85RJ;
