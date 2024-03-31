@@ -10,6 +10,7 @@ import Foundation
 enum NetworkError: Error {
     case badURL
     case invalidData
+    case invalidStatusCode
 }
 
 protocol URLSessionProtocol {
@@ -41,6 +42,11 @@ class ServiceManager: ServiceManagerProtocol {
             if let error = error {
                 completionHandler(.failure(error))
                 return
+            }
+            
+            if let response = response as? HTTPURLResponse,
+                response.statusCode != 200 {
+                completionHandler(.failure(NetworkError.invalidStatusCode))
             }
             
             guard let data = data else {
