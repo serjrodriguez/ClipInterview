@@ -12,6 +12,8 @@ final class ServiceManagerTests: XCTestCase {
     var sut: ServiceManager!
     var mockURLSession: MockURLSession!
     
+    let testURL = "http://testURL"
+    
     override func setUp() {
         super.setUp()
         mockURLSession = MockURLSession()
@@ -26,15 +28,53 @@ final class ServiceManagerTests: XCTestCase {
     }
     
     func test_callingRequestDataFromURL_shouldMakeDataTaskAndURLRequest() {
-        sut.requestDataFromURL("testURL") { (result: Result<TestDecodableStruct, Error>) in }
+        sut.requestDataFromURL(testURL) { (result: Result<Model, Error>) in }
         
         XCTAssertEqual(mockURLSession.dataTaskCallCount, 1, "Data task call count")
-        XCTAssertEqual(mockURLSession.dataTaskArgsRequest.first, URLRequest(url:  URL(string:"testURL")!), "testing request")
+        XCTAssertEqual(mockURLSession.dataTaskArgsRequest.first, URLRequest(url:  URL(string:testURL)!), "testing request")
     }
-}
-
-private struct TestDecodableStruct: Decodable {
     
+    func test_callingRequestDataFromURLWithSuccessResponse_shouldReturnResults() {
+        var testResponse: Model?
+        let successHandlerCalled = expectation(description: "Success closure expectation")
+        sut.requestDataFromURL(testURL) { (result: Result<Model, Error>) in
+            switch result {
+            case .success(let model):
+                testResponse = model
+                successHandlerCalled.fulfill()
+            case .failure(_):
+                XCTFail("Unexpected error response")
+            }
+        }
+        mockURLSession.dataTaskArgsCompletionHandler.first?(
+            jsonData(), response(statusCode: 200), nil
+        )
+        
+        waitForExpectations(timeout: 0.01)
+        XCTAssertEqual(testResponse?.data.children.count, 1)
+        XCTAssertEqual(testResponse?.data.children.first?.data.title, "test title")
+    }
+    
+    private func response(statusCode: Int) -> HTTPURLResponse? {
+        HTTPURLResponse(url: URL(string: "http://testURL")!,
+                        statusCode: statusCode,
+                        httpVersion: nil,
+                        headerFields: nil)
+    }
+    
+    private func jsonData() -> Data {
+    """
+    {
+        "data": {
+            "children": [{
+                    "data": {
+                        "title": "test title"
+                    }
+            }]
+        }
+    }
+    """.data(using: .utf8)!
+    }
 }
 
 final class MockServiceManager: ServiceManagerProtocol {
