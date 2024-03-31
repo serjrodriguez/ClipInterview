@@ -47,6 +47,12 @@ class ListViewModel: ListViewModelProtocol {
     }
     
     func getDataAtRow(_ row: Int) -> ChildrenData? {
-        return model?.data.children[row] ?? nil
+        return model?.data.children[safe: row]
+    }
+}
+
+private extension Collection {
+    subscript (safe index: Index) -> Element? {
+        return indices.contains(index) ? self[index] : nil
     }
 }
