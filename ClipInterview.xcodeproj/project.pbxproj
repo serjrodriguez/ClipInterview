@@ -21,6 +21,9 @@
 		7062DCC62BB4C44700FA4AE5 /* ListViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7062DCC52BB4C44700FA4AE5 /* ListViewControllerTests.swift */; };
 		7062DCCA2BB4D03300FA4AE5 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7062DCC92BB4D03300FA4AE5 /* Helpers.swift */; };
 		7062DCCC2BB4DFE800FA4AE5 /* EjerciciosPracticos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7062DCCB2BB4DFE800FA4AE5 /* EjerciciosPracticos.swift */; };
+		70CD1C722BB9F35F00029501 /* ViewControllerPresentationSpy.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70CD1C712BB9F35F00029501 /* ViewControllerPresentationSpy.xcframework */; };
+		70CD1C742BB9F36D00029501 /* ViewControllerPresentationSpy.xcframework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 70CD1C712BB9F35F00029501 /* ViewControllerPresentationSpy.xcframework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		70CD1C762BB9F38C00029501 /* BaseViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70CD1C752BB9F38C00029501 /* BaseViewControllerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +42,19 @@
 			remoteInfo = ClipInterview;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		70CD1C732BB9F36700029501 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 7;
+			files = (
+				70CD1C742BB9F36D00029501 /* ViewControllerPresentationSpy.xcframework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		7062DC862BB48C8500FA4AE5 /* ClipInterview.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClipInterview.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -59,6 +75,8 @@
 		7062DCC52BB4C44700FA4AE5 /* ListViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewControllerTests.swift; sourceTree = "<group>"; };
 		7062DCC92BB4D03300FA4AE5 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		7062DCCB2BB4DFE800FA4AE5 /* EjerciciosPracticos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EjerciciosPracticos.swift; sourceTree = "<group>"; };
+		70CD1C712BB9F35F00029501 /* ViewControllerPresentationSpy.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = ViewControllerPresentationSpy.xcframework; sourceTree = "<group>"; };
+		70CD1C752BB9F38C00029501 /* BaseViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewControllerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70CD1C722BB9F35F00029501 /* ViewControllerPresentationSpy.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -124,9 +143,11 @@
 		7062DC9F2BB48C8600FA4AE5 /* ClipInterviewTests */ = {
 			isa = PBXGroup;
 			children = (
+				70CD1C712BB9F35F00029501 /* ViewControllerPresentationSpy.xcframework */,
 				7062DCC52BB4C44700FA4AE5 /* ListViewControllerTests.swift */,
 				7062DCC32BB4C3F700FA4AE5 /* ListViewModelTests.swift */,
 				7062DCC92BB4D03300FA4AE5 /* Helpers.swift */,
+				70CD1C752BB9F38C00029501 /* BaseViewControllerTests.swift */,
 			);
 			path = ClipInterviewTests;
 			sourceTree = "<group>";
@@ -185,6 +206,7 @@
 				7062DC982BB48C8600FA4AE5 /* Sources */,
 				7062DC992BB48C8600FA4AE5 /* Frameworks */,
 				7062DC9A2BB48C8600FA4AE5 /* Resources */,
+				70CD1C732BB9F36700029501 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -304,6 +326,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7062DCC62BB4C44700FA4AE5 /* ListViewControllerTests.swift in Sources */,
+				70CD1C762BB9F38C00029501 /* BaseViewControllerTests.swift in Sources */,
 				7062DCC42BB4C3F700FA4AE5 /* ListViewModelTests.swift in Sources */,
 				7062DCCA2BB4D03300FA4AE5 /* Helpers.swift in Sources */,
 			);

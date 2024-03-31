@@ -7,6 +7,7 @@
 
 @testable import ClipInterview
 import Foundation
+import UIKit
 
 func makeMockData(_ numberOfChildMembers: Int = 1) -> Model {
     var childrenDataArray: [ChildrenData] = []
@@ -16,4 +17,13 @@ func makeMockData(_ numberOfChildMembers: Int = 1) -> Model {
     }
     
     return Model(data: Children(children: childrenDataArray))
+}
+
+func putInViewHierarchy(_ viewController: UIViewController) {
+    let window = UIWindow()
+    window.addSubview(viewController.view)
+}
+
+func executeRunLoop() {
+    RunLoop.current.run(until: Date())
 }
