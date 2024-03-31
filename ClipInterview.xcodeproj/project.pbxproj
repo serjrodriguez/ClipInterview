@@ -24,6 +24,8 @@
 		70CD1C722BB9F35F00029501 /* ViewControllerPresentationSpy.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70CD1C712BB9F35F00029501 /* ViewControllerPresentationSpy.xcframework */; };
 		70CD1C742BB9F36D00029501 /* ViewControllerPresentationSpy.xcframework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 70CD1C712BB9F35F00029501 /* ViewControllerPresentationSpy.xcframework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		70CD1C762BB9F38C00029501 /* BaseViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70CD1C752BB9F38C00029501 /* BaseViewControllerTests.swift */; };
+		70CD1C782BB9FAE100029501 /* ServiceManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70CD1C772BB9FAE100029501 /* ServiceManagerTests.swift */; };
+		70CD1C7A2BB9FD7C00029501 /* MockURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70CD1C792BB9FD7C00029501 /* MockURLSession.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +79,8 @@
 		7062DCCB2BB4DFE800FA4AE5 /* EjerciciosPracticos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EjerciciosPracticos.swift; sourceTree = "<group>"; };
 		70CD1C712BB9F35F00029501 /* ViewControllerPresentationSpy.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = ViewControllerPresentationSpy.xcframework; sourceTree = "<group>"; };
 		70CD1C752BB9F38C00029501 /* BaseViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewControllerTests.swift; sourceTree = "<group>"; };
+		70CD1C772BB9FAE100029501 /* ServiceManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceManagerTests.swift; sourceTree = "<group>"; };
+		70CD1C792BB9FD7C00029501 /* MockURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLSession.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +152,8 @@
 				7062DCC32BB4C3F700FA4AE5 /* ListViewModelTests.swift */,
 				7062DCC92BB4D03300FA4AE5 /* Helpers.swift */,
 				70CD1C752BB9F38C00029501 /* BaseViewControllerTests.swift */,
+				70CD1C772BB9FAE100029501 /* ServiceManagerTests.swift */,
+				70CD1C792BB9FD7C00029501 /* MockURLSession.swift */,
 			);
 			path = ClipInterviewTests;
 			sourceTree = "<group>";
@@ -325,8 +331,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70CD1C7A2BB9FD7C00029501 /* MockURLSession.swift in Sources */,
 				7062DCC62BB4C44700FA4AE5 /* ListViewControllerTests.swift in Sources */,
 				70CD1C762BB9F38C00029501 /* BaseViewControllerTests.swift in Sources */,
+				70CD1C782BB9FAE100029501 /* ServiceManagerTests.swift in Sources */,
 				7062DCC42BB4C3F700FA4AE5 /* ListViewModelTests.swift in Sources */,
 				7062DCCA2BB4D03300FA4AE5 /* Helpers.swift in Sources */,
 			);

@@ -131,22 +131,3 @@ final class MockListViewModel: ListViewModelProtocol {
         return nil
     }
 }
-
-final class MockServiceManager: ServiceManagerProtocol {
-    var requestDataFromUrlCalledTimes = 0
-    var completionHandlerCalledWithSuccessTimes = 0
-    var completionHandlerCalledWithErrorTimes = 0
-    var shouldReturnSuccessResponse = true
-    
-    func requestDataFromURL<T>(_ urlString: String, completionHandler: @escaping (Result<T, Error>) -> Void) where T : Decodable {
-        requestDataFromUrlCalledTimes += 1
-        if shouldReturnSuccessResponse {
-            completionHandlerCalledWithSuccessTimes += 1
-            completionHandler(.success(makeMockData() as! T))
-        } else {
-            completionHandlerCalledWithErrorTimes += 1
-            let testError = NSError(domain: "Test Domain", code: 999)
-            completionHandler(.failure(testError))
-        }
-    }
-}

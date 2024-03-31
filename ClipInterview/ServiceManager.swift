@@ -12,18 +12,32 @@ enum NetworkError: Error {
     case invalidData
 }
 
+protocol URLSessionProtocol {
+    func dataTask(
+        with request: URLRequest,
+        completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void
+    ) -> URLSessionDataTask
+}
+
+extension URLSession: URLSessionProtocol { }
+
 protocol ServiceManagerProtocol {
     func requestDataFromURL<T: Decodable>(_ urlString: String, completionHandler: @escaping (Result<T, Error>) -> Void)
 }
 
 class ServiceManager: ServiceManagerProtocol {
+    var session: URLSessionProtocol = URLSession.shared
+    private var dataTask: URLSessionDataTask?
+    
     func requestDataFromURL<T: Decodable>(_ urlString: String, completionHandler: @escaping (Result<T, Error>) -> Void) {
         guard let url = URL(string: urlString) else {
             completionHandler(.failure(NetworkError.badURL))
             return
         }
         
-        URLSession.shared.dataTask(with: url) { data, response, error in
+        let request = URLRequest(url: url)
+        
+        dataTask = session.dataTask(with: request) { data, response, error in
             if let error = error {
                 completionHandler(.failure(error))
                 return
@@ -41,6 +55,7 @@ class ServiceManager: ServiceManagerProtocol {
                 completionHandler(.failure(error))
             }
         }
-        .resume()
+        
+        dataTask?.resume()
     }
 }
