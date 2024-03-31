@@ -47,6 +47,7 @@ class ServiceManager: ServiceManagerProtocol {
             if let response = response as? HTTPURLResponse,
                 response.statusCode != 200 {
                 completionHandler(.failure(NetworkError.invalidStatusCode))
+                return
             }
             
             guard let data = data else {

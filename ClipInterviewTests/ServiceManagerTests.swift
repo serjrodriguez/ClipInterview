@@ -46,13 +46,145 @@ final class ServiceManagerTests: XCTestCase {
                 XCTFail("Unexpected error response")
             }
         }
+        
         mockURLSession.dataTaskArgsCompletionHandler.first?(
             jsonData(), response(statusCode: 200), nil
         )
         
         waitForExpectations(timeout: 0.01)
+        
         XCTAssertEqual(testResponse?.data.children.count, 1)
         XCTAssertEqual(testResponse?.data.children.first?.data.title, "test title")
+    }
+    
+    func test_callingRequestDataWithInvalidHTTPCode_shouldReturnInvalidStatusCodeError() {
+        var error: Error?
+        let errorExpectation = expectation(description: "error called")
+        
+        sut.requestDataFromURL(testURL) { (result: Result<Model, Error>) in
+            switch result {
+            case .success(_):
+                XCTFail("Unexpected success response")
+            case .failure(let failure):
+                error = failure
+                errorExpectation.fulfill()
+            }
+        }
+        
+        mockURLSession.dataTaskArgsCompletionHandler.first?(
+        jsonData(), response(statusCode: 500), nil
+        )
+        
+        waitForExpectations(timeout: 0.01)
+        
+        XCTAssertNotNil(error)
+        XCTAssertEqual(error as! NetworkError, NetworkError.invalidStatusCode)
+    }
+    
+    func test_callingRequestDataWithInvalidData_shouldReturnInvalidDataError() {
+        var error: Error?
+        let errorExpectation = expectation(description: "error called")
+        
+        sut.requestDataFromURL(testURL) { (result: Result<Model, Error>) in
+            switch result {
+            case .success(_):
+                XCTFail("Unexpected success response")
+            case .failure(let failure):
+                error = failure
+                errorExpectation.fulfill()
+            }
+        }
+        
+        mockURLSession.dataTaskArgsCompletionHandler.first?(
+        nil, response(statusCode: 200), nil
+        )
+        
+        waitForExpectations(timeout: 0.01)
+        
+        XCTAssertNotNil(error)
+        XCTAssertEqual(error as! NetworkError, NetworkError.invalidData)
+    }
+    
+    func test_callingRequestDataAnReceivingAnError_shouldCallError() {
+        var error: Error?
+        let errorExpectation = expectation(description: "error called")
+        
+        sut.requestDataFromURL(testURL) { (result: Result<Model, Error>) in
+            switch result {
+            case .success(_):
+                XCTFail("Unexpected success response")
+            case .failure(let failure):
+                error = failure
+                errorExpectation.fulfill()
+            }
+        }
+        
+        mockURLSession.dataTaskArgsCompletionHandler.first?(
+            jsonData(), response(statusCode: 200), NetworkError.badURL
+        )
+        
+        waitForExpectations(timeout: 0.01)
+        
+        XCTAssertNotNil(error)
+        XCTAssertEqual(error as! NetworkError, NetworkError.badURL)
+    }
+    
+    func test_callingRequestDataWithNotValidURL_shouldReturnInvalidURLError() {
+        var error: Error?
+        let errorExpectation = expectation(description: "error called")
+        
+        sut.requestDataFromURL("") { (result: Result<Model, Error>) in
+            switch result {
+            case .success(_):
+                XCTFail("Unexpected success response")
+            case .failure(let failure):
+                error = failure
+                errorExpectation.fulfill()
+            }
+        }
+        
+        mockURLSession.dataTaskArgsCompletionHandler.first?(
+            jsonData(), response(statusCode: 200), nil
+        )
+        
+        waitForExpectations(timeout: 0.01)
+        
+        XCTAssertNotNil(error)
+        XCTAssertEqual(error as! NetworkError, NetworkError.badURL)
+    }
+    
+    func test_callingRequestDataWithInvalidObject_shouldReturnDecodingError() throws {
+        var error: Error?
+        let errorExpectation = expectation(description: "error called")
+        
+        sut.requestDataFromURL(testURL) { (result: Result<MockInvalidModel, Error>) in
+            switch result {
+            case .success(_):
+                XCTFail("Unexpected success response")
+            case .failure(let failure):
+                error = failure
+                errorExpectation.fulfill()
+            }
+        }
+        
+        mockURLSession.dataTaskArgsCompletionHandler.first?(
+            jsonData(), response(statusCode: 200), nil
+        )
+        
+        waitForExpectations(timeout: 0.01)
+        
+        let errorUnwapped = try XCTUnwrap(error as? DecodingError)
+        
+        switch errorUnwapped {
+        case    .keyNotFound(_, let context):
+            XCTAssertEqual(context.debugDescription, "No value associated with key CodingKeys(stringValue: \"title\", intValue: nil) (\"title\").")
+        case    .typeMismatch(_, _),
+                .valueNotFound(_, _),
+                .dataCorrupted(_):
+            XCTFail("Unexpected decoding error")
+        @unknown default:
+            XCTFail("Unexpected decoding error")
+        }
     }
     
     private func response(statusCode: Int) -> HTTPURLResponse? {
@@ -74,6 +206,10 @@ final class ServiceManagerTests: XCTestCase {
         }
     }
     """.data(using: .utf8)!
+    }
+    
+    private struct MockInvalidModel: Decodable {
+        var title: String
     }
 }
 
