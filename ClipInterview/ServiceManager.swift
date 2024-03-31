@@ -15,7 +15,7 @@ enum NetworkError: Error {
 protocol URLSessionProtocol {
     func dataTask(
         with request: URLRequest,
-        completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void
+        completionHandler: @escaping @Sendable (Data?, URLResponse?, Error?) -> Void
     ) -> URLSessionDataTask
 }
 
